@@ -348,6 +348,6 @@ Have a play around with the options and see what they can do. There's some more 
 
 This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/deed.en. Based upon [Getting Started with R](http://rpubs.com/nickbearman/gettingstartedwithr) by Nick Bearman.
 
-#URL and details
+#URL and details 
 
 This page is http://pcwww.liv.ac.uk/~nbearman/r-google-map-making.html and all the files are available in a [GitHub repository](https://github.com/nickbearman/r-google-map-making-20140708 "GitHub repository"). Feel free to make use of these exercises and [fork](https://guides.github.com/activities/forking/ "Forking Projects") this work. This worksheet was created using R 3.0.3 and R Studio 0.98 on OSX and tested on Microsoft Windows XX using R x.x.x and R Studio 0.98 on xx/07/2014 by [Nick Bearman](https://www.linkedin.com/in/nickbearman "Nick Bearman Linkedin Profile"). 
