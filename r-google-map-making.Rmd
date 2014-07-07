@@ -320,19 +320,18 @@ asb.count <- poly.counts(asb.pts,merseyside)
 ```{r, comment = NA, message = FALSE, warning=FALSE}
 # First, add an ASB event count column to the 'mersey.lsoa' SpatialPolygonsDataFrame
 merseyside@data$asb.count <- asb.count
-#Load some libraries that we need to plot maps
-library(classInt)
-library(RColorBrewer)
-#create classification for the map and select colours
-breaks <- classIntervals(merseyside@data[,'asb.count'], n = 6, style = "fisher")$brk
-my_colours <- brewer.pal(6, "Greens")
-#plot the map
-plot(merseyside, col = my_colours[findInterval(merseyside@data$asb.count, breaks, all.inside = TRUE)],   axes = FALSE, border = rgb(0.8,0.8,0.8))
+# Fortify the merseyside data for use with ggplot
+data <- fortify(merseyside, region = "zonecode")
+# Add on the asb.count to the object data
+data <- merge(data,merseyside@data, by.x="id", by.y = "zonecode")
+#plot, centered on Melling to show the whole Merseyside area
+qmap('Melling', zoom = 10) +
+  geom_polygon(aes(x = long, y = lat, group = group, fill = asb.count), data = data)
 ```
 
-The map just drawn shows areas with a high *absolute* anti-social behaviour incident counts.
+The map just drawn shows areas with a high *absolute* anti-social behaviour incident counts - you should just be able to pick out the light blue spot in the centre of Liverpool, with a slight variation elsehwere. This doesn't make the map particually easy to read, because we are just counting incidents. 
 
-However, it is more meaningful to consider these quantities *per head of population* - areas with larger populations would have higher absolute counts even if the chances of someone committing an offence was the same everywhere. Also, in some small communities, it might be that crime is relatively high. Working with crimes per person (i.e. per head of population) overcomes this issue. What extra data set would you need to calculate crimes per person?
+It is more meaningful to consider these quantities *per head of population* - areas with larger populations would have higher absolute counts even if the chances of someone committing an offence was the same everywhere. Also, in some small communities, it might be that crime is relatively high. Working with crimes per person (i.e. per head of population) overcomes this issue. What extra data set would you need to calculate crimes per person?
 
 If you have time, try creating maps of the different types of crime. How does the spatial pattern vary?
 
