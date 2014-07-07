@@ -86,7 +86,7 @@ We are going to make use of some data available from the Police.uk site. You can
 
 ```{r, eval = FALSE, comment=NA}
 #Download
-download.file("https://raw.githubusercontent.com/nickbearman/r-google-map-making-20140708/master/police-uk-2014-04-merseyside-street.csv", "police-uk-2014-04-merseyside-street.csv", method = "internal")
+download.file("https://raw.githubusercontent.com/nickbearman/r-google-map-making-20140708/master/police-uk-2014-04-merseyside-street.csv", "police-uk-2014-04-merseyside-street.csv", method = "internal") #if you are running this on OSX, you will need to replace method = "internal" with method = "curl"
 #Read the data into a variable called crimes
 crimes <- read.csv("police-uk-2014-04-merseyside-street.csv")
 ```
