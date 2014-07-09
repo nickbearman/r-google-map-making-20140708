@@ -33,9 +33,7 @@ One of the libraries we will use is `ggmap`, which allows us to quickly and easi
 library(ggmap)
 ```
 
-This will load various other libraries and you will probably see some black information messages. If you see any red error messages, then ask for help. 
-
-We can then create a quick map of Liverpool with the `qmap()` function. You should see the map appear in the 'Plots' window to the left of the R Studio window. 
+This will load various other libraries and you will probably see information messages. We can then create a quick map of Liverpool with the `qmap()` function. You should see the map appear in the 'Plots' window to the left of the R Studio window. 
 
 ```{r, comment=NA, message = FALSE}
 qmap('Liverpool')
@@ -130,7 +128,7 @@ This shows each crime as a red point. Those of you who know Merseyside might rec
 
 ![](r-studio-new-script.png)
 
-Then copy the four lines of code in the section below and paste it into the R script window at the top. To run the code,  highlight the bit of code you want to run and then either click the 'Run' button (top right) or, and then press Ctrl-Enter on the keyboard (hold down Control and press Enter). R should create the map, as shown in this document. If you get red error messages, check you have copied all of the code and not missed any bits out. 
+Then copy the four lines of code in the section below and paste it into the R script window at the top. To run the code,  highlight the bit of code you want to run and then either click the 'Run' button (top right) or, and then press Ctrl-Enter on the keyboard (hold down Control and press Enter). R should create the map, as shown in this document. If you get error messages, check you have copied all of the code and not missed any bits out. 
 
 ```{r, comment = NA, message = FALSE, warning=FALSE}
 #plot the  hybrid Google Maps basemap
